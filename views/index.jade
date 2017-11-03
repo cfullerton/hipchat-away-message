@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		// The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+		meta(name='description', content='Hipchat Away Message')
+		meta(name='author', content='Conner Fullerton')
+		link(rel='icon', href='/public/favicon.ico?v=2')
+		title HipChat Away Message
+		link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',rel='stylesheet')
+	body
+		.container-fluid
+			// Main component for a primary marketing message or call to action
+			.jumbotron
+				div.center
+					p Enter your hipchat Jabber ID, your hipchat password and the message you want to reply to other messages with.
+					p To find your hipchat jabber ID go to hipchat.com > My Account > Edit Profile > XMPP/JabberID
+					form.center(action="/",method="post")
+						input.username(type="text",name="username",placeholder="jabber ID")
+						br
+						input.password(type="password",name="password",placeholder="Hipchat Password")
+						br
+						input.message(type="text",name="message",placeholder="Hipchat away message")
+						br
+						button.btn-primary.btn Turn on Away Message
+						br
+						br
+					form.center(action="/remove",method="post")
+						p Enter you JabberID and password here to end sending a previously set away message
+						input.username(type="text",name="username",placeholder="jabber ID")
+						br
+						input.password(type="password",name="password",placeholder="Hipchat Password")
+						br
+						button.btn-primary.btn Turn off Away Message	
